@@ -1,7 +1,7 @@
 %define build_with_python 1
 Summary:		GEdit is a small but powerful text editor for GNOME
 Name:			gedit
-Version: 2.18.0
+Version: 2.18.1
 Release: %mkrel 1
 License:		GPL
 Group:			Editors 
@@ -22,7 +22,7 @@ BuildRequires:  enchant-devel
 BuildRequires:  iso-codes
 BuildRequires:  scrollkeeper
 BuildRequires:  perl-XML-Parser
-BuildRequires:  gnome-doc-utils libxslt-proc
+BuildRequires:  gnome-doc-utils
 BuildRequires:  gtk-doc
 %if %{build_with_python}
 BuildRequires:  gnome-python
@@ -156,5 +156,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
 %_datadir/gtk-doc/html/*
-
-
