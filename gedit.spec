@@ -1,7 +1,7 @@
 %define build_with_python 1
 Summary:		GEdit is a small but powerful text editor for GNOME
 Name:			gedit
-Version: 2.19.1
+Version: 2.19.2
 Release: %mkrel 1
 License:		GPL
 Group:			Editors 
@@ -13,7 +13,7 @@ Patch4:			gedit-2.13.2-filesel.patch
 URL:			http://www.gnome.org/projects/gedit/
 BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libgnomeprintui-devel >= 2.6.0
-BuildRequires:	gtksourceview-devel >= 1.9.0
+BuildRequires:	gtksourceview-devel >= 1.90.2
 BuildRequires:	libgnomeui2-devel >= 2.16.0
 BuildRequires:	gnome-vfs2-devel >= 2.16.0
 BuildRequires:  aspell-devel
@@ -27,13 +27,9 @@ BuildRequires:  gtk-doc
 %if %{build_with_python}
 BuildRequires:  gnome-python
 BuildRequires: pygtk2.0-devel >= 2.9.7
-BuildRequires: python-gtksourceview-devel
-BuildRequires: gnome-python-desktop
-BuildRequires: gnome-python-gtksourceview
+BuildRequires: python-gtksourceview-devel >= 1.90.2
 BuildRequires: libglade2.0-devel
-Requires: gnome-python-gtksourceview
 Requires: gnome-python-gnomevfs
-Requires: gnome-python-gconf
 Requires: pygtk2.0-libglade
 Requires: python-gtksourceview
 %endif
