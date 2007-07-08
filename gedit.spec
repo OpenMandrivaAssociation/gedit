@@ -2,10 +2,11 @@
 Summary:		GEdit is a small but powerful text editor for GNOME
 Name:			gedit
 Version: 2.19.2
-Release: %mkrel 1
+Release: %mkrel 2
 License:		GPL
 Group:			Editors 
 Source0:		ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.bz2
+Patch: gedit-2.19.2-pkgconfig.patch
 # (fc) use current locale when creating new file (Mdk bug 6887)
 Patch1:			gedit-2.17.3-encoding.patch
 # (fc) 2.8.1-1mdk make file selector remember last window size and directory (Fedora)
@@ -68,6 +69,7 @@ Install this if you want to build plugins that use gEdit's API.
 
 %prep
 %setup -q
+%patch -p1
 %patch1 -p1 -b .encoding
 %patch4 -p1 -b .filesel
 
