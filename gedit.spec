@@ -1,20 +1,19 @@
 %define build_with_python 1
 Summary:		GEdit is a small but powerful text editor for GNOME
 Name:			gedit
-Version: 2.19.2
-Release: %mkrel 2
+Version: 2.19.3
+Release: %mkrel 1
 License:		GPL
 Group:			Editors 
 Source0:		ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.bz2
-Patch: gedit-2.19.2-pkgconfig.patch
 # (fc) use current locale when creating new file (Mdk bug 6887)
 Patch1:			gedit-2.17.3-encoding.patch
 # (fc) 2.8.1-1mdk make file selector remember last window size and directory (Fedora)
-Patch4:			gedit-2.13.2-filesel.patch
+Patch4:			gedit-2.19.3-filesel.patch
 URL:			http://www.gnome.org/projects/gedit/
 BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libgnomeprintui-devel >= 2.6.0
-BuildRequires:	gtksourceview-devel >= 1.90.2
+BuildRequires:	gtksourceview-devel >= 1.90.3
 BuildRequires:	libgnomeui2-devel >= 2.16.0
 BuildRequires:	gnome-vfs2-devel >= 2.16.0
 BuildRequires:  aspell-devel
@@ -28,7 +27,7 @@ BuildRequires:  gtk-doc
 %if %{build_with_python}
 BuildRequires:  gnome-python
 BuildRequires: pygtk2.0-devel >= 2.9.7
-BuildRequires: python-gtksourceview-devel >= 1.90.2
+BuildRequires: python-gtksourceview-devel >= 1.90.3
 BuildRequires: libglade2.0-devel
 Requires: gnome-python-gnomevfs
 Requires: pygtk2.0-libglade
@@ -69,7 +68,6 @@ Install this if you want to build plugins that use gEdit's API.
 
 %prep
 %setup -q
-%patch -p1
 %patch1 -p1 -b .encoding
 %patch4 -p1 -b .filesel
 
