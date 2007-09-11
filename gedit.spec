@@ -1,7 +1,7 @@
 %define build_with_python 1
 Summary:		GEdit is a small but powerful text editor for GNOME
 Name:			gedit
-Version: 2.19.91
+Version: 2.19.92
 Release: %mkrel 1
 License:		GPL
 Group:			Editors 
