@@ -2,14 +2,12 @@
 Summary:		GEdit is a small but powerful text editor for GNOME
 Name:			gedit
 Version: 2.19.92
-Release: %mkrel 1
+Release: %mkrel 2
 License:		GPL
 Group:			Editors 
 Source0:		ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.bz2
-# (fc) use current locale when creating new file (Mdk bug 6887)
-Patch1:			gedit-2.17.3-encoding.patch
-# (fc) 2.8.1-1mdk make file selector remember last window size and directory (Fedora)
-Patch4:			gedit-2.19.3-filesel.patch
+# (fc) use current locale when creating new file (Mdk bug 6887), detect if content is current locale or UTF-8 on file load (Mdv bug #20277) (Antoine Pitrou)
+Patch0:			gedit-2.19.92-localencoding.patch
 URL:			http://www.gnome.org/projects/gedit/
 BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libgnomeprintui-devel >= 2.6.0
@@ -29,6 +27,7 @@ BuildRequires:  gnome-python
 BuildRequires: pygtk2.0-devel >= 2.9.7
 BuildRequires: python-gtksourceview-devel >= 1.90.4
 BuildRequires: libglade2.0-devel
+BuildRequires: librsvg
 Requires: gnome-python-gnomevfs
 Requires: pygtk2.0-libglade
 Requires: python-gtksourceview
@@ -68,8 +67,7 @@ Install this if you want to build plugins that use gEdit's API.
 
 %prep
 %setup -q
-%patch1 -p1 -b .encoding
-%patch4 -p1 -b .filesel
+%patch0 -p1 -b .localencoding
 
 %build
 %configure2_5x --enable-gtk-doc \
@@ -91,22 +89,11 @@ for omf in %buildroot%_datadir/omf/%name/%name-??*.omf;do
 echo "%lang($(basename $omf|sed -e s/%name-// -e s/.omf//)) $(echo $omf|sed -e s!%buildroot!!)" >> %name-2.0.lang
 done
 
-# menu entry
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):\
-	needs="X11" \
-	section="More Applications/Editors" \
-	title="GEdit" \
-	longtitle="GEdit is a small but powerful text editor" \
-	command="%{_bindir}/gedit" \
-	icon="text-editor" \
-	startup_notify="true" xdg="true"
-EOF
-desktop-file-install --vendor="" \
-  --remove-category="Application" \
-  --add-category="X-MandrivaLinux-MoreApplications-Editors" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
+mkdir -p %buildroot%{_miconsdir} %buildroot%{_liconsdir} %buildroot%{_iconsdir} 
+
+cp %{_datadir}/icons/gnome/16x16/apps/accessories-text-editor.png %buildroot%{_miconsdir}/accessories-text-editor.png
+rsvg -w 32 -h 32 %{_datadir}/icons/gnome/scalable/apps/accessories-text-editor.svn %buildroot%{_iconsdir}/accessories-text-editor.png
+rsvg -w 48 -h 48 %{_datadir}/icons/gnome/scalable/apps/accessories-text-editor.svn %buildroot%{_liconsdir}/accessories-text-editor.png
 
 # remove unpackaged files
 rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.la \
@@ -146,8 +133,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*
 %dir %{_datadir}/omf/gedit
 %{_datadir}/omf/gedit/*-C.omf
-%{_menudir}/*
 %{_mandir}/man1/*
+%{_liconsdir}/*.png
+%{_iconsdir}/*.png
+%{_miconsdir}/*.png
 
 %files devel
 %defattr(-, root, root)
