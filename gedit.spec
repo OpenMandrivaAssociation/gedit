@@ -9,7 +9,6 @@ Source0:		ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.bz2
 # (fc) use current locale when creating new file (Mdk bug 6887), detect if content is current locale or UTF-8 on file load (Mdv bug #20277) (Antoine Pitrou)
 Patch0:			gedit-2.19.92-localencoding.patch
 URL:			http://www.gnome.org/projects/gedit/
-BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libgnomeprintui-devel >= 2.6.0
 BuildRequires:	gtksourceview-devel >= 2.0.0
 BuildRequires:	libgnomeui2-devel >= 2.16.0
