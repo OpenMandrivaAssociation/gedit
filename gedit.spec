@@ -1,7 +1,7 @@
 %define build_with_python 1
 Summary:		Small but powerful text editor for GNOME
 Name:			gedit
-Version: 2.21.2
+Version: 2.22.0
 Release: %mkrel 1
 License:		GPL
 Group:			Editors 
@@ -11,7 +11,7 @@ Patch0:			gedit-2.19.92-localencoding.patch
 URL:			http://www.gnome.org/projects/gedit/
 BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	libgnomeprintui-devel >= 2.6.0
-BuildRequires:	gtksourceview-devel >= 2.0.0
+BuildRequires:	gtksourceview-devel >= 2.2.0
 BuildRequires:	libgnomeui2-devel >= 2.16.0
 BuildRequires:	gnome-vfs2-devel >= 2.16.0
 BuildRequires:  aspell-devel
@@ -25,7 +25,7 @@ BuildRequires:  gtk-doc
 %if %{build_with_python}
 BuildRequires:  gnome-python
 BuildRequires: pygtk2.0-devel >= 2.9.7
-BuildRequires: python-gtksourceview-devel >= 2.0.0
+BuildRequires: python-gtksourceview-devel >= 2.2.0
 BuildRequires: libglade2.0-devel
 BuildRequires: librsvg
 Requires: gnome-python-gnomevfs
