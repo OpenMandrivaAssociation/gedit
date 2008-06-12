@@ -101,19 +101,23 @@ rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.la \
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%if %mdkversion < 200900
 %post
 %update_scrollkeeper
 %post_install_gconf_schemas gedit
 %update_desktop_database
 %{update_menus}
+%endif
 
 %preun
 %preun_uninstall_gconf_schemas gedit
 
+%if %mdkversion < 200900
 %postun 
 %{clean_menus}
 %clean_scrollkeeper
 %clean_desktop_database
+%endif
 
 %files -f %{name}-2.0.lang
 %defattr(-, root, root)
