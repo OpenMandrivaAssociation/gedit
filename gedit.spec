@@ -18,7 +18,7 @@ BuildRequires:  libattr-devel
 BuildRequires:  enchant-devel
 BuildRequires:  iso-codes
 BuildRequires:  scrollkeeper
-BuildRequires:  perl-XML-Parser
+BuildRequires:  intltool
 BuildRequires:  gnome-doc-utils
 BuildRequires:  gtk-doc
 %if %{build_with_python}
