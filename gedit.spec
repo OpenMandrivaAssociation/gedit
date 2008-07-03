@@ -1,9 +1,9 @@
 %define build_with_python 1
 Summary:		Small but powerful text editor for GNOME
 Name:			gedit
-Version: 2.22.3
+Version: 2.23.1
 Release: %mkrel 1
-License:		GPL
+License:		GPLv2+
 Group:			Editors 
 Source0:		ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.bz2
 # (fc) use current locale when creating new file (Mdk bug 6887), detect if content is current locale or UTF-8 on file load (Mdv bug #20277) (Antoine Pitrou)
