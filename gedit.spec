@@ -12,6 +12,7 @@ URL:			http://www.gnome.org/projects/gedit/
 BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtksourceview-devel >= 2.2.0
 BuildRequires:	libGConf2-devel
+BuildRequires:	dbus-glib-devel
 BuildRequires:  aspell-devel
 BuildRequires:  libattr-devel
 BuildRequires:  enchant-devel
