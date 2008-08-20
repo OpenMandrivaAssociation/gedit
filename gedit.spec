@@ -13,7 +13,7 @@ BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtksourceview-devel >= 2.2.0
 BuildRequires:	libGConf2-devel
 #gw this is still in the pkgconfig file, could be a bug:
-BuildRequires:	libgnomeui-devel
+BuildRequires:	libgnomeui2-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:  aspell-devel
 BuildRequires:  libattr-devel
