@@ -2,7 +2,7 @@
 Summary:		Small but powerful text editor for GNOME
 Name:			gedit
 Version: 2.23.90
-Release: %mkrel 3
+Release: %mkrel 4
 License:		GPLv2+
 Group:			Editors 
 Source0:		ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.bz2
@@ -28,9 +28,8 @@ BuildRequires:  gtk-doc
 BuildRequires:  gnome-python
 BuildRequires: pygtk2.0-devel >= 2.12.0
 BuildRequires: python-gtksourceview-devel >= 2.2.0
-BuildRequires: libglade2.0-devel
 BuildRequires: librsvg
-Requires: pygtk2.0-libglade
+Requires: pygtk2.0
 Requires: python-gtksourceview
 %endif
 BuildRequires:  gtk+2-devel >= 2.5.4
