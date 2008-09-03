@@ -2,12 +2,16 @@
 Summary:		Small but powerful text editor for GNOME
 Name:			gedit
 Version: 2.23.91
-Release: %mkrel 1
+Release: %mkrel 2
 License:		GPLv2+
 Group:			Editors 
 Source0:		ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.bz2
 # (fc) use current locale when creating new file (Mdk bug 6887), detect if content is current locale or UTF-8 on file load (Mdv bug #20277) (Antoine Pitrou)
 Patch0:			gedit-2.19.92-localencoding.patch
+#gw: fix escaping of file names
+# http://bugzilla.gnome.org/show_bug.cgi?id=550632
+# https://qa.mandriva.com/show_bug.cgi?id=43461
+Patch1:			gedit-r6480-fix-escaping-of-file-names.patch
 URL:			http://www.gnome.org/projects/gedit/
 BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtksourceview-devel >= 2.2.0
@@ -65,6 +69,7 @@ Install this if you want to build plugins that use gEdit's API.
 %prep
 %setup -q
 %patch0 -p1 -b .localencoding
+%patch1
 
 %build
 %configure2_5x --enable-gtk-doc \
