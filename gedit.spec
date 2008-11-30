@@ -1,7 +1,7 @@
 %define build_with_python 1
 Summary:		Small but powerful text editor for GNOME
 Name:			gedit
-Version: 2.24.2
+Version: 2.25.1
 Release: %mkrel 1
 License:		GPLv2+
 Group:			Editors 
@@ -93,7 +93,7 @@ rsvg -w 32 -h 32 %{_datadir}/icons/gnome/scalable/apps/accessories-text-editor.s
 rsvg -w 48 -h 48 %{_datadir}/icons/gnome/scalable/apps/accessories-text-editor.svn %buildroot%{_liconsdir}/accessories-text-editor.png
 
 # remove unpackaged files
-rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/*.la \
+rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugin*/*.la \
  $RPM_BUILD_ROOT%{_libdir}/bonobo/*.la $RPM_BUILD_ROOT/var
 
 %clean
@@ -125,6 +125,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gedit-2
 %dir %{_libdir}/gedit-2/plugins
 %{_libdir}/gedit-2/gedit-bugreport.sh
+%dir %{_libdir}/gedit-2/plugin-loaders
+%{_libdir}/gedit-2/plugin-loaders/libcloader.so
+%{_libdir}/gedit-2/plugin-loaders/libpythonloader.so
 %{_libdir}/gedit-2/plugins/*.so
 %{_libdir}/gedit-2/plugins/*.gedit-plugin
 %{_libdir}/gedit-2/plugins/externaltools/
