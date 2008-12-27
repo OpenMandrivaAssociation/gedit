@@ -8,7 +8,6 @@ Group:			Editors
 Source0:		ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.bz2
 # (fc) use current locale when creating new file (Mdk bug 6887), detect if content is current locale or UTF-8 on file load (Mdv bug #20277) (Antoine Pitrou)
 Patch0:			gedit-2.19.92-localencoding.patch
-Patch1:			gedit-2.2-fix-str-fmt.patch
 URL:			http://www.gnome.org/projects/gedit/
 BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtksourceview-devel >= 2.2.0
@@ -66,9 +65,11 @@ Install this if you want to build plugins that use gEdit's API.
 %prep
 %setup -q
 %patch0 -p1 -b .localencoding
-%patch1 -p0
 
 %build
+# it fails at building python plugin-loader:
+# http://bugzilla.gnome.org/show_bug.cgi?id=565778
+%define Werror_cflags %nil
 %configure2_5x --enable-gtk-doc \
 %if %{build_with_python}
 --enable-python
