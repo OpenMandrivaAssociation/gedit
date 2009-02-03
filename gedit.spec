@@ -1,7 +1,7 @@
 %define build_with_python 1
 Summary:		Small but powerful text editor for GNOME
 Name:			gedit
-Version: 2.25.5
+Version: 2.25.6
 Release: %mkrel 1
 License:		GPLv2+
 Group:			Editors 
