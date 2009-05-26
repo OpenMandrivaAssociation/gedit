@@ -1,7 +1,7 @@
 %define build_with_python 1
 Summary:		Small but powerful text editor for GNOME
 Name:			gedit
-Version: 2.26.2
+Version: 2.27.1
 Release: %mkrel 1
 License:		GPLv2+
 Group:			Editors 
@@ -133,6 +133,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gedit-2/plugins/externaltools/
 %{_libdir}/gedit-2/plugins/snippets/
 %{_libdir}/gedit-2/plugins/pythonconsole/
+%{_libdir}/gedit-2/plugins/quickopen/
 %{_datadir}/gedit-2
 %{_datadir}/applications/*
 %dir %{_datadir}/omf/gedit
