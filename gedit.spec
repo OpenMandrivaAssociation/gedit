@@ -1,7 +1,7 @@
 %define build_with_python 1
 Summary:		Small but powerful text editor for GNOME
 Name:			gedit
-Version: 2.29.3
+Version: 2.29.4
 Release: %mkrel 1
 License:		GPLv2+
 Group:			Editors 
@@ -10,7 +10,7 @@ Source0:		ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.bz2
 Patch0:			gedit-2.19.92-localencoding.patch
 URL:			http://www.gnome.org/projects/gedit/
 BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
-BuildRequires:	gtksourceview-devel >= 2.2.0
+BuildRequires:	gtksourceview-devel >= 2.9.4
 BuildRequires:	libGConf2-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:  aspell-devel
