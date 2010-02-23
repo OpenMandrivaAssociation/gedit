@@ -1,7 +1,7 @@
 %define build_with_python 1
 Summary:		Small but powerful text editor for GNOME
 Name:			gedit
-Version:		2.29.6
+Version:		2.29.7
 Release:		%mkrel 1
 License:		GPLv2+
 Group:			Editors 
@@ -22,7 +22,7 @@ BuildRequires:  gtk-doc
 %if %{build_with_python}
 BuildRequires:  gnome-python
 BuildRequires: pygtk2.0-devel >= 2.12.0
-BuildRequires: python-gtksourceview-devel >= 2.2.0
+BuildRequires: python-gtksourceview-devel >= 2.9.2
 BuildRequires: librsvg
 Requires: pygtk2.0
 Requires: python-gtksourceview
