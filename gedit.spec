@@ -1,8 +1,8 @@
 %define build_with_python 1
 Summary:		Small but powerful text editor for GNOME
 Name:			gedit
-Version:		2.30.2
-Release:		%mkrel 2
+Version:		2.30.3
+Release:		%mkrel 1
 License:		GPLv2+
 Group:			Editors 
 Source0:		ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.bz2
