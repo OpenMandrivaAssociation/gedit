@@ -1,8 +1,16 @@
+%if %mandriva_branch == Cooker
+# Cooker
+%define release %mkrel 1
+%else
+# Old distros
+%define subrel 1
+%define release %mkrel 0
+%endif
 %define build_with_python 1
 Summary:		Small but powerful text editor for GNOME
 Name:			gedit
 Version:		2.30.4
-Release:		%mkrel 1
+Release:		%release
 License:		GPLv2+
 Group:			Editors 
 Source0:		ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.bz2
