@@ -21,6 +21,7 @@ BuildRequires:	libGConf2-devel GConf2
 BuildRequires:	dbus-glib-devel
 BuildRequires:  aspell-devel
 BuildRequires:  libattr-devel
+BuildRequires:	libsm-devel
 BuildRequires:  enchant-devel
 BuildRequires:  iso-codes
 BuildRequires:  scrollkeeper
