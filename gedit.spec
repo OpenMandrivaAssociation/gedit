@@ -17,7 +17,7 @@ Source0:		ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.bz2
 URL:			http://www.gnome.org/projects/gedit/
 BuildRoot:		%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	gtksourceview-devel >= 2.9.4
-BuildRequires:	libGConf2-devel
+BuildRequires:	libGConf2-devel GConf2
 BuildRequires:	dbus-glib-devel
 BuildRequires:  aspell-devel
 BuildRequires:  libattr-devel
