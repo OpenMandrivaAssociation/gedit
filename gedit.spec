@@ -83,7 +83,7 @@ Install this if you want to build plugins that use gEdit's API.
 make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %makeinstall_std
 rm -rf %buildroot/var
@@ -99,11 +99,11 @@ rsvg -w 32 -h 32 %{_datadir}/icons/gnome/scalable/apps/accessories-text-editor.s
 rsvg -w 48 -h 48 %{_datadir}/icons/gnome/scalable/apps/accessories-text-editor.svn %buildroot%{_liconsdir}/accessories-text-editor.png
 
 # remove unpackaged files
-rm -f $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugin*/*.la \
- $RPM_BUILD_ROOT%{_libdir}/bonobo/*.la $RPM_BUILD_ROOT/var
+rm -f %{buildroot}%{_libdir}/gedit-2/plugin*/*.la \
+ %{buildroot}%{_libdir}/bonobo/*.la %{buildroot}/var
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post
