@@ -17,6 +17,7 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.xz
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	itstool
+BuildRequires:	python-gi
 BuildRequires:	libattr-devel
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(enchant)
@@ -140,7 +141,7 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %{_libdir}/gedit/plugins/libtime.so
 
 %if %{build_python}
-#{python_sitearch}/gi/overrides/Gedit.*
+%{python_sitearch}/gi/overrides/Gedit.*
 %{_libdir}/gedit/plugins/externaltools/*
 %{_libdir}/gedit/plugins/externaltools.plugin
 
