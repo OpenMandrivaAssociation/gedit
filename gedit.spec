@@ -7,7 +7,7 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	3.2.6
+Version:	3.4.1
 Release:	1
 License:	GPLv2+
 Group:		Editors 
@@ -107,6 +107,8 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %{_datadir}/dbus-1/services/org.gnome.gedit.service
 %{_mandir}/man1/gedit.1*
 
+
+%{_datadir}/help/*/%{name}/*
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.externaltools.gschema.xml
