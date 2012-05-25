@@ -1,10 +1,6 @@
 %define _disable_ld_no_undefined 1
 %define build_python 1
 
-%define major	0
-%define libname	%mklibname %{name}-private %{major}
-%define develname	%mklibname %{name}-private -d
-
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
 Version:	3.4.2
@@ -40,6 +36,8 @@ BuildRequires:	pkgconfig(zeitgeist-1.0)
 BuildRequires:	pkgconfig(pygobject-3.0)
 %endif
 
+Obsoletes:	%{_lib}gedit-private0 < 3.4.2
+
 %description
 gEdit is a small but powerful text editor designed expressly
 for GNOME.
@@ -59,20 +57,12 @@ Requires:	%{name} = %{version}-%{release}
 This packages brings the Zeitgeist dataprovider - a plugin that logs
 access and leave event for documents used with gedit.
 
-%package -n %{libname}
-Group:		System/Libraries
-Summary:	Library for %{name}
+%package devel
+Group:		Development/C
+Summary:	Headers for writing gEdit plugins
+Obsoletes:	%{_lib}gedit-private-devel < 3.4.2
 
-%description -n %{libname}
-Library for %{name}.
-
-%package %{develname}
-Group: Development/C
-Summary: Headers for writing gEdit plugins
-Requires: %{libname} = %{version}-%{release}
-%rename %{name}-devel
-
-%description %{develname}
+%description devel
 Install this if you want to build plugins that use gEdit's API.
 
 %prep
@@ -96,19 +86,16 @@ Install this if you want to build plugins that use gEdit's API.
 %install
 %makeinstall_std
 find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
-%find_lang %{name} --with-gnome --all-name
+%find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
 %doc README AUTHORS NEWS MAINTAINERS
 %{_bindir}/*
-%{_datadir}/gedit
 %{_datadir}/applications/gedit.desktop
-%{_datadir}/GConf/gsettings/gedit.*
 %{_datadir}/dbus-1/services/org.gnome.gedit.service
-%{_mandir}/man1/gedit.1*
+%{_datadir}/GConf/gsettings/gedit.*
+%{_datadir}/gedit
 
-
-%{_datadir}/help/*/%{name}/*
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.externaltools.gschema.xml
@@ -117,9 +104,11 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.time.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.time.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.pythonconsole.gschema.xml
+%{_mandir}/man1/gedit.1*
 
 %{_libdir}/gedit/gedit-bugreport.sh
 %{_libdir}/gedit/girepository-1.0/Gedit-3.0.typelib
+%{_libdir}/gedit/libgedit-private.so
 
 %{_libdir}/gedit/plugins/changecase.plugin
 %{_libdir}/gedit/plugins/libchangecase.so
@@ -161,12 +150,8 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %{_libdir}/gedit/plugins/zeitgeist.plugin
 %{_libdir}/gedit/plugins/libzeitgeistplugin.so
 
-%files -n %{libname}
-%{_libdir}/libgedit-private.so.%{major}*
-
-%files %{develname}
+%files devel
 %doc %{_datadir}/gtk-doc/html/*
-%{_libdir}/libgedit-private.so
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
 
