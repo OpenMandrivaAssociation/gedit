@@ -3,12 +3,12 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	3.4.2
+Version:	3.6.2
 Release:	1
 License:	GPLv2+
 Group:		Editors 
 URL:		http://www.gnome.org/projects/gedit/
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gedit/3.6/%{name}-%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
@@ -85,6 +85,9 @@ Install this if you want to build plugins that use gEdit's API.
 
 %install
 %makeinstall_std
+
+sed -i 's,Keywords.*,&;,g' %{buildroot}%{_datadir}/applications/gedit.desktop
+
 find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %find_lang %{name} --with-gnome
 
@@ -154,4 +157,3 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %doc %{_datadir}/gtk-doc/html/*
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
-
