@@ -14,7 +14,7 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	python-gi
-BuildRequires:	libattr-devel
+BuildRequires:	attr-devel
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(enchant)
 BuildRequires:	pkgconfig(glib-2.0)
