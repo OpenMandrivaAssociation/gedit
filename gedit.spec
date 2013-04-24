@@ -1,3 +1,5 @@
+%define url_ver %(echo %{version}|cut -d. -f1,2)
+
 %define _disable_ld_no_undefined 1
 %define build_python 1
 
@@ -7,8 +9,8 @@ Version:	3.6.2
 Release:	2
 License:	GPLv2+
 Group:		Editors 
-URL:		http://www.gnome.org/projects/gedit/
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gedit/3.6/%{name}-%{version}.tar.xz
+Url:		http://www.gnome.org/projects/gedit/
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
@@ -88,7 +90,6 @@ Install this if you want to build plugins that use gEdit's API.
 
 sed -i 's,Keywords.*,&;,g' %{buildroot}%{_datadir}/applications/gedit.desktop
 
-find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
@@ -157,3 +158,4 @@ find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 %doc %{_datadir}/gtk-doc/html/*
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
+
