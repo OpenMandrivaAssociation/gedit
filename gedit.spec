@@ -33,9 +33,9 @@ BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(x11)
-BuildRequires:	pkgconfig(zeitgeist-1.0)
+BuildRequires:	pkgconfig(zeitgeist-2.0)
 %if %{build_python}
-BuildRequires:	python3
+BuildRequires:	python3-gi
 BuildRequires:	pkgconfig(pygobject-3.0)
 %endif
 
