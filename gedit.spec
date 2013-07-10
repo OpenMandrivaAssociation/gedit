@@ -35,6 +35,7 @@ BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(zeitgeist-2.0)
 %if %{build_python}
+BuildRequires:	python3-devel
 BuildRequires:	python3-gi
 BuildRequires:	pkgconfig(pygobject-3.0)
 %endif
@@ -137,7 +138,7 @@ sed -i 's,Keywords.*,&;,g' %{buildroot}%{_datadir}/applications/gedit.desktop
 %{_libdir}/gedit/plugins/libtime.so
 
 %if %{build_python}
-%{python_sitearch}/gi/overrides/Gedit.*
+%{python3_sitearch}/gi/overrides/Gedit.*
 %{_libdir}/gedit/plugins/externaltools/*
 %{_libdir}/gedit/plugins/externaltools.plugin
 
