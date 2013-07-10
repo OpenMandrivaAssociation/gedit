@@ -35,6 +35,7 @@ BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(zeitgeist-1.0)
 %if %{build_python}
+BuildRequires:	python3
 BuildRequires:	pkgconfig(pygobject-3.0)
 %endif
 
