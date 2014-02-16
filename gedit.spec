@@ -112,7 +112,7 @@ sed -i 's,Keywords.*,&;,g' %{buildroot}%{_datadir}/applications/gedit.desktop
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.pythonconsole.gschema.xml
 %{_mandir}/man1/gedit.1*
 
-%{_libdir}/gedit/gedit-bugreport.sh
+%{_libexecdir}/gedit/gedit-bugreport.sh
 %{_libdir}/gedit/girepository-1.0/Gedit-3.0.typelib
 %{_libdir}/gedit/libgedit-private.so
 
