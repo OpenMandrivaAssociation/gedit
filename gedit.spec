@@ -6,7 +6,7 @@
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
 Version:	3.8.3
-Release:	6
+Release:	7
 License:	GPLv2+
 Group:		Editors 
 Url:		http://www.gnome.org/projects/gedit/
