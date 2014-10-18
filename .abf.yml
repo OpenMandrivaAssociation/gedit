@@ -1,3 +1,4 @@
----
-sources:
+removed_sources:
   gedit-3.8.3.tar.xz: cc4cd6e7cd7919abb38bbf45b61597a2904a1c2f
+sources:
+  gedit-3.14.0.tar.xz: 1a4935b888222f4d1c2b8db10f3b111d15f03d08

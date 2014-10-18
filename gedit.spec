@@ -5,7 +5,7 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	3.8.3
+Version:	3.14.0
 Release:	1
 License:	GPLv2+
 Group:		Editors 
@@ -33,10 +33,9 @@ BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(x11)
-BuildRequires:	pkgconfig(zeitgeist-2.0)
 %if %{build_python}
 BuildRequires:	python3-devel
-BuildRequires:	python3-gi
+BuildRequires:	python-gi
 BuildRequires:	pkgconfig(pygobject-3.0)
 %endif
 
@@ -52,15 +51,6 @@ features while remaining small at its core, multiple
 document editing through the use of a 'tabbed' notebook and
 many more functions.
 
-%package zeitgeist
-Summary:	Zeitgeist plugin for gedit
-Group:		Editors
-Requires:	%{name} = %{version}-%{release}
-
-%description zeitgeist
-This packages brings the Zeitgeist dataprovider - a plugin that logs
-access and leave event for documents used with gedit.
-
 %package devel
 Group:		Development/C
 Summary:	Headers for writing gEdit plugins
@@ -73,8 +63,7 @@ Install this if you want to build plugins that use gEdit's API.
 %setup -q
 
 %build
-%configure2_5x \
-	--disable-static \
+%configure \
 	--enable-gtk-doc \
 %if %{build_python}
 	--enable-python \
@@ -83,21 +72,23 @@ Install this if you want to build plugins that use gEdit's API.
 %endif
 	--enable-introspection \
 	--disable-updater \
-	--enable-gvfs-metadata
+	--enable-gvfs-metadata \
+	--disable-vala
 
 %make LIBS='-lm'
 
 %install
 %makeinstall_std
 
-sed -i 's,Keywords.*,&;,g' %{buildroot}%{_datadir}/applications/gedit.desktop
+rm -Rf %{buildroot}%{python3_sitearch}/gi/overrides/__pycache__
 
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
 %doc README AUTHORS NEWS MAINTAINERS
 %{_bindir}/*
-%{_datadir}/applications/gedit.desktop
+%{_datadir}/applications/org.gnome.gedit.desktop
+%{_datadir}/appdata/org.gnome.gedit.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.gedit.service
 %{_datadir}/GConf/gsettings/gedit.*
 %{_datadir}/gedit
@@ -112,12 +103,9 @@ sed -i 's,Keywords.*,&;,g' %{buildroot}%{_datadir}/applications/gedit.desktop
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.pythonconsole.gschema.xml
 %{_mandir}/man1/gedit.1*
 
-%{_libdir}/gedit/gedit-bugreport.sh
+%{_libexecdir}/gedit/gedit-bugreport.sh
 %{_libdir}/gedit/girepository-1.0/Gedit-3.0.typelib
-%{_libdir}/gedit/libgedit-private.so
-
-%{_libdir}/gedit/plugins/changecase.plugin
-%{_libdir}/gedit/plugins/libchangecase.so
+%{_libdir}/gedit/libgedit.so
 
 %{_libdir}/gedit/plugins/libdocinfo.so
 %{_libdir}/gedit/plugins/docinfo.plugin
@@ -151,10 +139,6 @@ sed -i 's,Keywords.*,&;,g' %{buildroot}%{_datadir}/applications/gedit.desktop
 %{_libdir}/gedit/plugins/snippets/*
 %{_libdir}/gedit/plugins/snippets.plugin
 %endif
-
-%files zeitgeist
-%{_libdir}/gedit/plugins/zeitgeist.plugin
-%{_libdir}/gedit/plugins/libzeitgeistplugin.so
 
 %files devel
 %doc %{_datadir}/gtk-doc/html/*
