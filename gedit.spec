@@ -5,12 +5,12 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	3.14.0
+Version:	3.14.1
 Release:	1
 License:	GPLv2+
 Group:		Editors 
 Url:		http://www.gnome.org/projects/gedit/
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:	https://download.gnome.org/sources/gedit/3.14/%{name}-%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
@@ -80,7 +80,7 @@ Install this if you want to build plugins that use gEdit's API.
 %install
 %makeinstall_std
 
-rm -Rf %{buildroot}%{python3_sitearch}/gi/overrides/__pycache__
+rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 %find_lang %{name} --with-gnome
 
@@ -126,7 +126,7 @@ rm -Rf %{buildroot}%{python3_sitearch}/gi/overrides/__pycache__
 %{_libdir}/gedit/plugins/libtime.so
 
 %if %{build_python}
-%{python3_sitearch}/gi/overrides/Gedit.*
+%{py3_platsitedir}/gi/overrides/Gedit.*
 %{_libdir}/gedit/plugins/externaltools/*
 %{_libdir}/gedit/plugins/externaltools.plugin
 
@@ -144,4 +144,3 @@ rm -Rf %{buildroot}%{python3_sitearch}/gi/overrides/__pycache__
 %doc %{_datadir}/gtk-doc/html/*
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
-
