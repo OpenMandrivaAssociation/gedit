@@ -5,12 +5,12 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	3.14.1
-Release:	2
+Version:	3.14.2
+Release:	1
 License:	GPLv2+
 Group:		Editors 
 Url:		http://www.gnome.org/projects/gedit/
-Source0:	https://download.gnome.org/sources/gedit/3.14/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.gnome.org:21/pub/GNOME/sources/gedit/3.14/%{name}-%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool

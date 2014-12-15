@@ -1,5 +1,6 @@
 removed_sources:
   gedit-3.14.0.tar.xz: 1a4935b888222f4d1c2b8db10f3b111d15f03d08
+  gedit-3.14.1.tar.xz: c53d7d6167e5c2c517074e5cb9cf59bb3ded2660
   gedit-3.8.3.tar.xz: cc4cd6e7cd7919abb38bbf45b61597a2904a1c2f
 sources:
-  gedit-3.14.1.tar.xz: c53d7d6167e5c2c517074e5cb9cf59bb3ded2660
+  gedit-3.14.2.tar.xz: c4bd3f22b8cd750e9de0d7914a572788dc1ac8b7
