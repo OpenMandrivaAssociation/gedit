@@ -1,12 +1,13 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 
 %define _disable_ld_no_undefined 1
+%define _disable_rebuild_configure 1
 %define build_python 1
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	3.16.1
-Release:	3
+Version:	3.18.1
+Release:	1
 License:	GPLv2+
 Group:		Editors 
 Url:		http://www.gnome.org/projects/gedit/
