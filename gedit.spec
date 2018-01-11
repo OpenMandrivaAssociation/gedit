@@ -6,12 +6,12 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	3.18.2
+Version:	3.22.1
 Release:	1
 License:	GPLv2+
 Group:		Editors
 Url:		http://www.gnome.org/projects/gedit/
-Source0:	ftp://ftp.gnome.org:21/pub/GNOME/sources/gedit/3.14/%{name}-%{version}.tar.xz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
@@ -74,7 +74,8 @@ Install this if you want to build plugins that use gEdit's API.
 	--enable-introspection \
 	--disable-updater \
 	--enable-gvfs-metadata \
-	--disable-vala
+	--disable-vala \
+	--disable-spell
 
 %make LIBS='-lm'
 
@@ -104,6 +105,8 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.pythonconsole.gschema.xml
 %{_mandir}/man1/gedit.1*
 
+%{_datadir}/icons/*/*/*/*
+
 %{_libexecdir}/gedit/gedit-bugreport.sh
 %{_libdir}/gedit/girepository-1.0/Gedit-3.0.typelib
 %{_libdir}/gedit/libgedit.so
@@ -119,9 +122,6 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 %{_libdir}/gedit/plugins/sort.plugin
 %{_libdir}/gedit/plugins/libsort.so
-
-%{_libdir}/gedit/plugins/spell.plugin
-%{_libdir}/gedit/plugins/libspell.so
 
 %{_libdir}/gedit/plugins/time.plugin
 %{_libdir}/gedit/plugins/libtime.so
