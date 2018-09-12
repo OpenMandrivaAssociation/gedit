@@ -90,7 +90,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %doc README AUTHORS NEWS MAINTAINERS
 %{_bindir}/*
 %{_datadir}/applications/org.gnome.gedit.desktop
-%{_datadir}/appdata/org.gnome.gedit.appdata.xml
+%{_datadir}/metainfo/org.gnome.gedit.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.gedit.service
 %{_datadir}/GConf/gsettings/gedit.*
 %{_datadir}/gedit
@@ -128,6 +128,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 %if %{build_python}
 %{py3_platsitedir}/gi/overrides/Gedit.*
+%{py3_platsitedir}/gi/overrides/__pycache__/
 %{_libdir}/gedit/plugins/externaltools/*
 %{_libdir}/gedit/plugins/externaltools.plugin
 
