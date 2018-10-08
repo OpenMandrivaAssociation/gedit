@@ -1,0 +1,13 @@
+Index: configure.ac
+===================================================================
+--- configure.ac
++++ configure.ac	2018-10-08 04:04:04.133860560 +0200
+@@ -19,7 +19,7 @@
+ # Dependencies
+ GLIB_REQUIRED=2.44
+ GTK_REQUIRED=3.22.0
+-GTKSOURCEVIEW_REQUIRED=3.22.0
++GTKSOURCEVIEW_REQUIRED=4
+ LIBPEAS_REQUIRED=1.14.1
+ LIBXML_REQUIRED=2.5.0
+ GSPELL_REQUIRED=0.2.5
