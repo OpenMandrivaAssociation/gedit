@@ -63,7 +63,7 @@ Install this if you want to build plugins that use gEdit's API.
 
 %prep
 %setup -q
-%patch0	-p1
+%patch0	-p0
 
 %build
 %configure \
