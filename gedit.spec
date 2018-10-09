@@ -150,4 +150,4 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
 
-%exclude /usr/lib*/debug/usr/lib*/gedit/plugins/libquickhighlight.so-%{version}.%{arch}.debug
+%exclude /usr/lib*/debug/usr/lib*/gedit/plugins/libquickhighlight.so-%{version}.*.debug
