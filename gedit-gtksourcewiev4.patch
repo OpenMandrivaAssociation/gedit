@@ -1,0 +1,44 @@
+Index: configure
+===================================================================
+--- configure
++++ configure	2018-10-09 17:19:12.848920343 +0200
+@@ -2493,7 +2493,7 @@
+ # Dependencies
+ GLIB_REQUIRED=2.44
+ GTK_REQUIRED=3.22.0
+-GTKSOURCEVIEW_REQUIRED=3.22.0
++GTKSOURCEVIEW_REQUIRED=4.0.2
+ LIBPEAS_REQUIRED=1.14.1
+ LIBXML_REQUIRED=2.5.0
+ GSPELL_REQUIRED=0.2.5
+@@ -17201,7 +17201,7 @@
+ 	gio-2.0 >= $GLIB_REQUIRED
+ 	gmodule-2.0
+ 	gtk+-3.0 >= $GTK_REQUIRED
+-	gtksourceview-3.0 >= $GTKSOURCEVIEW_REQUIRED
++	gtksourceview-4 >= $GTKSOURCEVIEW_REQUIRED
+ 	libpeas-1.0 >= $LIBPEAS_REQUIRED
+ 	libpeas-gtk-1.0 >= $LIBPEAS_REQUIRED
+ 	gsettings-desktop-schemas
+Index: configure.ac
+===================================================================
+--- configure.ac
++++ configure.ac	2018-10-09 17:19:42.085133800 +0200
+@@ -19,7 +19,7 @@
+ # Dependencies
+ GLIB_REQUIRED=2.44
+ GTK_REQUIRED=3.22.0
+-GTKSOURCEVIEW_REQUIRED=3.22.0
++GTKSOURCEVIEW_REQUIRED=4.0.2
+ LIBPEAS_REQUIRED=1.14.1
+ LIBXML_REQUIRED=2.5.0
+ GSPELL_REQUIRED=0.2.5
+@@ -288,7 +288,7 @@
+ 	gio-2.0 >= $GLIB_REQUIRED
+ 	gmodule-2.0
+ 	gtk+-3.0 >= $GTK_REQUIRED
+-	gtksourceview-3.0 >= $GTKSOURCEVIEW_REQUIRED
++	gtksourceview-4 >= $GTKSOURCEVIEW_REQUIRED
+ 	libpeas-1.0 >= $LIBPEAS_REQUIRED
+ 	libpeas-gtk-1.0 >= $LIBPEAS_REQUIRED
+ 	gsettings-desktop-schemas
