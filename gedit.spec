@@ -12,6 +12,7 @@ License:	GPLv2+
 Group:		Editors
 Url:		http://www.gnome.org/projects/gedit/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.tar.xz
+Patch0:		gedit-gtksourcewiev4.patch
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
@@ -62,6 +63,7 @@ Install this if you want to build plugins that use gEdit's API.
 
 %prep
 %setup -q
+%patch0	-p1
 
 %build
 %configure \
