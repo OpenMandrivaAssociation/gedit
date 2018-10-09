@@ -27,7 +27,7 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gtk-doc)
-BuildRequires:	pkgconfig(gtksourceview-4.0)
+BuildRequires:	pkgconfig(gtksourceview-3.0)
 BuildRequires:	pkgconfig(ice)
 BuildRequires:	pkgconfig(iso-codes)
 BuildRequires:	pkgconfig(libpeas-gtk-1.0)
@@ -113,6 +113,9 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %{_libdir}/gedit/girepository-1.0/Gedit-3.0.typelib
 %{_libdir}/gedit/libgedit.so
 
+%{_libdir}/gedit/plugins/libquickhighlight.so
+%{_libdir}/gedit/plugins/quickhighlight.plugin
+
 %{_libdir}/gedit/plugins/libdocinfo.so
 %{_libdir}/gedit/plugins/docinfo.plugin
 
@@ -148,3 +151,5 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %doc %{_datadir}/gtk-doc/html/*
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
+
+%exclude /usr/lib*/debug/usr/lib*/gedit/plugins/libquickhighlight.so-%{version}.*.debug
