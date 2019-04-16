@@ -59,6 +59,7 @@ many more functions.
 %package devel
 Group:		Development/C
 Summary:	Headers for writing gEdit plugins
+Requires:       %{name} = %{version}-%{release}
 Obsoletes:	%{_lib}gedit-private-devel < 3.4.2
 
 %description devel
