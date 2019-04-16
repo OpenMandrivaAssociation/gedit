@@ -22,12 +22,15 @@ BuildRequires:	attr-devel
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(enchant)
 BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(gio-2.0) >= 2.26.0
+BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.25.5
 BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gtk-doc)
 BuildRequires:  pkgconfig(gtksourceview-4)
+BuildRequires:	pkgconfig(gspell-1)
 BuildRequires:	pkgconfig(ice)
 BuildRequires:	pkgconfig(iso-codes)
 BuildRequires:	pkgconfig(libpeas-gtk-1.0)
