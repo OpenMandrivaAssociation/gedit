@@ -6,8 +6,8 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	3.30.2
-Release:	2
+Version:	3.32.0
+Release:	1
 License:	GPLv2+
 Group:		Editors
 Url:		http://www.gnome.org/projects/gedit/
@@ -16,17 +16,21 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{versi
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	itstool
+BuildRequires:	meson
 BuildRequires:	python-gi
 BuildRequires:	attr-devel
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(enchant)
 BuildRequires:	pkgconfig(glib-2.0)
+BuildRequires:	pkgconfig(gio-2.0) >= 2.26.0
+BuildRequires:	pkgconfig(gio-unix-2.0) >= 2.25.5
 BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gtk-doc)
-BuildRequires:	pkgconfig(gtksourceview-3.0)
+BuildRequires:  pkgconfig(gtksourceview-4)
+BuildRequires:	pkgconfig(gspell-1)
 BuildRequires:	pkgconfig(ice)
 BuildRequires:	pkgconfig(iso-codes)
 BuildRequires:	pkgconfig(libpeas-gtk-1.0)
@@ -34,6 +38,9 @@ BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(x11)
+BuildRequires:  yelp-tools
+BuildRequires:  gtk-doc
+BuildRequires:  gettext-devel
 %if %{build_python}
 BuildRequires:	python3-devel
 BuildRequires:	python-gi
@@ -55,6 +62,7 @@ many more functions.
 %package devel
 Group:		Development/C
 Summary:	Headers for writing gEdit plugins
+Requires:       %{name} = %{version}-%{release}
 Obsoletes:	%{_lib}gedit-private-devel < 3.4.2
 
 %description devel
@@ -64,35 +72,22 @@ Install this if you want to build plugins that use gEdit's API.
 %setup -q
 
 %build
-%configure \
-	--enable-gtk-doc \
-%if %{build_python}
-	--enable-python \
-%else
-	--disable-python \
-%endif
-	--enable-introspection \
-	--disable-updater \
-	--enable-gvfs-metadata \
-	--disable-vala \
-	--disable-spell
-
-%make LIBS='-lm'
+%meson -Ddocumentation=true
+%meson_build
 
 %install
-%makeinstall_std
+%meson_install
 
 rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc README AUTHORS NEWS MAINTAINERS
+%doc README.md AUTHORS NEWS MAINTAINERS
 %{_bindir}/*
 %{_datadir}/applications/org.gnome.gedit.desktop
 %{_datadir}/metainfo/org.gnome.gedit.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.gedit.service
-%{_datadir}/GConf/gsettings/gedit.*
 %{_datadir}/gedit
 
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.gschema.xml
@@ -109,7 +104,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 %{_libexecdir}/gedit/gedit-bugreport.sh
 %{_libdir}/gedit/girepository-1.0/Gedit-3.0.typelib
-%{_libdir}/gedit/libgedit.so
+%{_libdir}/gedit/libgedit*.so
 
 %{_libdir}/gedit/plugins/libquickhighlight.so
 %{_libdir}/gedit/plugins/quickhighlight.plugin
@@ -128,6 +123,9 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 %{_libdir}/gedit/plugins/time.plugin
 %{_libdir}/gedit/plugins/libtime.so
+
+%{_libdir}/gedit/plugins/spell.plugin
+%{_libdir}/gedit/plugins/libspell.so
 
 %if %{build_python}
 %{py3_platsitedir}/gi/overrides/Gedit.*
@@ -150,4 +148,4 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
 
-%exclude /usr/lib*/debug/usr/lib*/gedit/plugins/libquickhighlight.so-%{version}.*.debug
+#exclude /usr/lib*/debug/usr/lib*/gedit/plugins/libquickhighlight.so-%{version}.*.debug
