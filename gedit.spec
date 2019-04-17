@@ -16,7 +16,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{versi
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	itstool
-BuildRequires:	meson = 0.49.2
+BuildRequires:	meson
 BuildRequires:	python-gi
 BuildRequires:	attr-devel
 BuildRequires:	pkgconfig(dbus-glib-1)
@@ -104,7 +104,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 %{_libexecdir}/gedit/gedit-bugreport.sh
 %{_libdir}/gedit/girepository-1.0/Gedit-3.0.typelib
-%{_libdir}/gedit/libgedit.so
+#{_libdir}/gedit/libgedit.so
 
 %{_libdir}/gedit/plugins/libquickhighlight.so
 %{_libdir}/gedit/plugins/quickhighlight.plugin
