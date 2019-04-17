@@ -16,7 +16,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{versi
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	itstool
-BuildRequires:	meson
+BuildRequires:	meson = 0.49.2
 BuildRequires:	python-gi
 BuildRequires:	attr-devel
 BuildRequires:	pkgconfig(dbus-glib-1)
