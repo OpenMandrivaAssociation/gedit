@@ -6,7 +6,7 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	3.32.2
+Version:	3.34.0
 Release:	1
 License:	GPLv2+
 Group:		Editors
@@ -83,13 +83,13 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc README.md AUTHORS NEWS MAINTAINERS
+%doc README.md AUTHORS NEWS
 %{_bindir}/*
 %{_datadir}/applications/org.gnome.gedit.desktop
 %{_datadir}/metainfo/org.gnome.gedit.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.gedit.service
 %{_datadir}/gedit
-
+%{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.spell.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.externaltools.gschema.xml
@@ -102,7 +102,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 %{_datadir}/icons/*/*/*/*
 
-%{_libexecdir}/gedit/gedit-bugreport.sh
+#{_libexecdir}/gedit/gedit-bugreport.sh
 %{_libdir}/gedit/girepository-1.0/Gedit-3.0.typelib
 %{_libdir}/gedit/libgedit*.so
 
