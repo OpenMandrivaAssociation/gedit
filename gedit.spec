@@ -83,7 +83,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc README.md AUTHORS NEWS MAINTAINERS
+%doc README.md AUTHORS NEWS
 %{_bindir}/*
 %{_datadir}/applications/org.gnome.gedit.desktop
 %{_datadir}/metainfo/org.gnome.gedit.appdata.xml
@@ -102,7 +102,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 %{_datadir}/icons/*/*/*/*
 
-%{_libexecdir}/gedit/gedit-bugreport.sh
+#{_libexecdir}/gedit/gedit-bugreport.sh
 %{_libdir}/gedit/girepository-1.0/Gedit-3.0.typelib
 %{_libdir}/gedit/libgedit*.so
 
