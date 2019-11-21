@@ -38,6 +38,7 @@ BuildRequires:	pkgconfig(libsoup-2.4)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(x11)
+BuildRequires:  pkgconfig(vapigen)
 BuildRequires:  yelp-tools
 BuildRequires:  gtk-doc
 BuildRequires:  gettext-devel
