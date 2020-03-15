@@ -13,6 +13,7 @@ Group:		Editors
 Url:		http://www.gnome.org/projects/gedit/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires:  cmake
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	itstool
