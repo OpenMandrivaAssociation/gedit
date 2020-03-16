@@ -102,7 +102,6 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.time.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.pythonconsole.gschema.xml
 %{_mandir}/man1/gedit.1*
-
 %{_datadir}/icons/*/*/*/*
 
 #{_libexecdir}/gedit/gedit-bugreport.sh
@@ -147,7 +146,6 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %endif
 
 %files devel
-%doc %{_datadir}/gtk-doc/html/*
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
 %{_datadir}/vala/vapi/gedit.deps
