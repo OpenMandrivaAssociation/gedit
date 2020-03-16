@@ -6,13 +6,14 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	3.34.1
-Release:	3
+Version:	3.36.0
+Release:	1
 License:	GPLv2+
 Group:		Editors
 Url:		http://www.gnome.org/projects/gedit/
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires:  cmake
 BuildRequires:	desktop-file-utils
 BuildRequires:	intltool
 BuildRequires:	itstool
@@ -39,6 +40,7 @@ BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:  pkgconfig(vapigen)
+BuildRequires:  pkgconfig(tepl-4)
 BuildRequires:  yelp-tools
 BuildRequires:  gtk-doc
 BuildRequires:  gettext-devel
@@ -100,7 +102,6 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.time.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.pythonconsole.gschema.xml
 %{_mandir}/man1/gedit.1*
-
 %{_datadir}/icons/*/*/*/*
 
 #{_libexecdir}/gedit/gedit-bugreport.sh
@@ -145,7 +146,6 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %endif
 
 %files devel
-%doc %{_datadir}/gtk-doc/html/*
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
 %{_datadir}/vala/vapi/gedit.deps
