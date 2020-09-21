@@ -6,7 +6,7 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	3.36.2
+Version:	3.38.0
 Release:	1
 License:	GPLv2+
 Group:		Editors
@@ -40,7 +40,7 @@ BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:  pkgconfig(vapigen)
-BuildRequires:  pkgconfig(tepl-4)
+BuildRequires:  pkgconfig(tepl-5)
 BuildRequires:  yelp-tools
 BuildRequires:  gtk-doc
 BuildRequires:  gettext-devel
