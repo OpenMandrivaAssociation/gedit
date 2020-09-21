@@ -86,7 +86,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc README.md AUTHORS NEWS
+%doc README.md NEWS
 %{_bindir}/*
 %{_datadir}/applications/org.gnome.gedit.desktop
 %{_datadir}/metainfo/org.gnome.gedit.appdata.xml
