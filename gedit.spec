@@ -130,8 +130,9 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %{_libdir}/gedit/plugins/libspell.so
 
 %if %{build_python}
-#{py3_platsitedir}/gi/overrides/Gedit.*
-#{py3_platsitedir}/gi/overrides/__pycache__/
+%{python_sitelib}/gi/overrides/Gedit.py
+%{python_sitelib}/gi/overrides/__pycache__/Gedit.cpython-39.opt-1.pyc
+%{python_sitelib}/gi/overrides/__pycache__/Gedit.cpython-39.pyc
 %{_libdir}/gedit/plugins/externaltools/*
 %{_libdir}/gedit/plugins/externaltools.plugin
 
