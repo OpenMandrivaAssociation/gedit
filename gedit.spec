@@ -7,7 +7,7 @@
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
 Version:	3.38.0
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Editors
 Url:		http://www.gnome.org/projects/gedit/
@@ -130,8 +130,8 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %{_libdir}/gedit/plugins/libspell.so
 
 %if %{build_python}
-%{py3_platsitedir}/gi/overrides/Gedit.*
-%{py3_platsitedir}/gi/overrides/__pycache__/
+#{py3_platsitedir}/gi/overrides/Gedit.*
+#{py3_platsitedir}/gi/overrides/__pycache__/
 %{_libdir}/gedit/plugins/externaltools/*
 %{_libdir}/gedit/plugins/externaltools.plugin
 
