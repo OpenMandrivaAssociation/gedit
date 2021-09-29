@@ -6,8 +6,8 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	40.1
-Release:	1
+Version:	41
+Release:	0.alpha.0
 License:	GPLv2+
 Group:		Editors
 Url:		http://www.gnome.org/projects/gedit/
@@ -72,7 +72,7 @@ Obsoletes:	%{_lib}gedit-private-devel < 3.4.2
 Install this if you want to build plugins that use gEdit's API.
 
 %prep
-%setup -q
+%setup -qn %{name}-%{version}-alpha
 
 %build
 %meson -Ddocumentation=true
