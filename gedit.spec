@@ -11,7 +11,7 @@ Release:	0.alpha.0
 License:	GPLv2+
 Group:		Editors
 Url:		http://www.gnome.org/projects/gedit/
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.alpha.tar.xz
 
 BuildRequires:  cmake
 BuildRequires:	desktop-file-utils
@@ -72,7 +72,7 @@ Obsoletes:	%{_lib}gedit-private-devel < 3.4.2
 Install this if you want to build plugins that use gEdit's API.
 
 %prep
-%setup -qn %{name}-%{version}-alpha
+%setup -qn %{name}-%{version}.alpha
 
 %build
 %meson -Ddocumentation=true
