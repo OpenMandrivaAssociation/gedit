@@ -129,6 +129,9 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %{_libdir}/gedit/plugins/spell.plugin
 %{_libdir}/gedit/plugins/libspell.so
 
+%{_libdir}/gedit/plugins/openlinks.plugin
+%{_libdir}/gedit/plugins/libopenlinks.so
+
 %if %{build_python}
 %{python_sitelib}/gi/overrides/Gedit.py
 %{python_sitelib}/gi/overrides/__pycache__/Gedit.cpython-39.opt-1.pyc
