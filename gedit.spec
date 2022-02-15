@@ -72,7 +72,7 @@ Obsoletes:	%{_lib}gedit-private-devel < 3.4.2
 Install this if you want to build plugins that use gEdit's API.
 
 %prep
-%setup -qn %{name}-%{version}.alpha
+%setup -qn %{name}-%{version}
 
 %build
 %meson -Ddocumentation=true
