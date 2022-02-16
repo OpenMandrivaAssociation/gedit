@@ -75,7 +75,7 @@ Install this if you want to build plugins that use gEdit's API.
 %setup -qn %{name}-%{version}
 
 %build
-%meson -Ddocumentation=true
+%meson -Duser_documentation=true
 %meson_build
 
 %install
