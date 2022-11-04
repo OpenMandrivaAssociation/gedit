@@ -145,6 +145,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %endif
 
 %files devel
+%doc %{_datadir}/gtk-doc/html/gedit/
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
 %{_datadir}/vala/vapi/gedit.deps
