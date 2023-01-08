@@ -6,7 +6,7 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	43.2
+Version:	44.1
 Release:	1
 License:	GPLv2+
 Group:		Editors
