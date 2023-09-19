@@ -6,12 +6,12 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	44.2
-Release:	3
+Version:	46.1
+Release:	1
 License:	GPLv2+
 Group:		Editors
-Url:		http://www.gnome.org/projects/gedit/
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.tar.xz
+Url:		https://www.gnome.org/projects/gedit/
+Source0:	https://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:  cmake
 BuildRequires:	desktop-file-utils
@@ -30,7 +30,7 @@ BuildRequires:	pkgconfig(gobject-introspection-1.0)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(gtk-doc)
-BuildRequires:  pkgconfig(gtksourceview-4)
+BuildRequires:  pkgconfig(libgedit-gtksourceview-300)
 BuildRequires:	pkgconfig(gspell-1)
 BuildRequires:	pkgconfig(ice)
 BuildRequires:	pkgconfig(iso-codes)
@@ -131,6 +131,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 %if %{build_python}
 %{python_sitelib}/gi/overrides/Gedit.py
+%{python_sitelib}/gi/overrides/__pycache__/Gedit.cpython-*.pyc
 %{_libdir}/gedit/plugins/externaltools/*
 %{_libdir}/gedit/plugins/externaltools.plugin
 
@@ -148,7 +149,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %doc %{_datadir}/gtk-doc/html/gedit/
 %{_includedir}/*
 %{_libdir}/pkgconfig/*
-%{_datadir}/vala/vapi/gedit.deps
-%{_datadir}/vala/vapi/gedit.vapi
+#{_datadir}/vala/vapi/gedit.deps
+#{_datadir}/vala/vapi/gedit.vapi
 
 #exclude /usr/lib*/debug/usr/lib*/gedit/plugins/libquickhighlight.so-%{version}.*.debug
