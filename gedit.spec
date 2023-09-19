@@ -131,6 +131,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 %if %{build_python}
 %{python_sitelib}/gi/overrides/Gedit.py
+%{python_sitelib}/gi/overrides/__pycache__/Gedit.cpython-*.pyc
 %{_libdir}/gedit/plugins/externaltools/*
 %{_libdir}/gedit/plugins/externaltools.plugin
 
