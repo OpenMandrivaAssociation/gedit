@@ -51,6 +51,7 @@ BuildRequires:	pkgconfig(pygobject-3.0)
 %endif
 
 Obsoletes:	%{_lib}gedit-private0 < 3.4.2
+Obsoletes:	%{name} < %{EVRD}
 
 %description
 gEdit is a small but powerful text editor designed expressly
