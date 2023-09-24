@@ -7,7 +7,7 @@
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
 Version:	46.1
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Editors
 Url:		https://www.gnome.org/projects/gedit/
@@ -49,6 +49,8 @@ BuildRequires:	python3-devel
 BuildRequires:	python-gi
 BuildRequires:	pkgconfig(pygobject-3.0)
 %endif
+
+Requires:  %{_lib}tepl6_4 >= 6.8.0
 
 Obsoletes:	%{_lib}gedit-private0 < 3.4.2
 Obsoletes:	%{name} < %{EVRD}
