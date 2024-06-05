@@ -6,11 +6,11 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	46.2
-Release:	2
+Version:	47.0
+Release:	1
 License:	GPLv2+
 Group:		Editors
-Url:		https://www.gnome.org/projects/gedit/
+Url:		https://gedit-technology.github.io/apps/gedit/
 Source0:	https://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:  cmake
