@@ -92,7 +92,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %doc README.md NEWS
 %{_bindir}/*
 %{_datadir}/applications/org.gnome.gedit.desktop
-%{_datadir}/share/metainfo/org.gnome.gedit.metainfo.xml
+%{_datadir}/metainfo/org.gnome.gedit.metainfo.xml
 %{_datadir}/dbus-1/services/org.gnome.gedit.service
 %{_datadir}/gedit
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.spell.gschema.xml
