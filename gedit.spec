@@ -40,7 +40,7 @@ BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:  pkgconfig(vapigen)
-BuildRequires:  pkgconfig(tepl-6)
+BuildRequires:  pkgconfig(libgedit-tepl-6)
 BuildRequires:  yelp-tools
 BuildRequires:  gtk-doc
 BuildRequires:  gettext-devel
