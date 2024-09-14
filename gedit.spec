@@ -135,17 +135,14 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %if %{build_python}
 %{python_sitelib}/gi/overrides/Gedit.py
 %{python_sitelib}/gi/overrides/__pycache__/Gedit.cpython-*.pyc
-#{_libdir}/gedit/plugins/externaltools/*
-#{_libdir}/gedit/plugins/externaltools.plugin
 
 %{_libdir}/gedit/plugins/pythonconsole/*
 %{_libdir}/gedit/plugins/pythonconsole.plugin
 
-#{_libdir}/gedit/plugins/quickopen/*
-#{_libdir}/gedit/plugins/quickopen.plugin
-
-#{_libdir}/gedit/plugins/snippets/*
-#{_libdir}/gedit/plugins/snippets.plugin
+%{_libdir}/gedit/plugins/textsize.plugin
+%{_libdir}/gedit/plugins/textsize/__init__.py
+%{_libdir}/gedit/plugins/textsize/signals.py
+%{_libdir}/gedit/plugins/textsize/viewactivatable.py
 %endif
 
 %files devel
