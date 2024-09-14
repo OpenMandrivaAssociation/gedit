@@ -98,7 +98,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.spell.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.enums.xml
-%{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.externaltools.gschema.xml
+#{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.externaltools.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.filebrowser.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.filebrowser.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.time.gschema.xml
@@ -135,17 +135,17 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %if %{build_python}
 %{python_sitelib}/gi/overrides/Gedit.py
 %{python_sitelib}/gi/overrides/__pycache__/Gedit.cpython-*.pyc
-%{_libdir}/gedit/plugins/externaltools/*
-%{_libdir}/gedit/plugins/externaltools.plugin
+#{_libdir}/gedit/plugins/externaltools/*
+#{_libdir}/gedit/plugins/externaltools.plugin
 
 %{_libdir}/gedit/plugins/pythonconsole/*
 %{_libdir}/gedit/plugins/pythonconsole.plugin
 
-%{_libdir}/gedit/plugins/quickopen/*
-%{_libdir}/gedit/plugins/quickopen.plugin
+#{_libdir}/gedit/plugins/quickopen/*
+#{_libdir}/gedit/plugins/quickopen.plugin
 
-%{_libdir}/gedit/plugins/snippets/*
-%{_libdir}/gedit/plugins/snippets.plugin
+#{_libdir}/gedit/plugins/snippets/*
+#{_libdir}/gedit/plugins/snippets.plugin
 %endif
 
 %files devel
