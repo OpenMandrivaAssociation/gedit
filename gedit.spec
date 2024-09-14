@@ -50,7 +50,7 @@ BuildRequires:	python-gi
 BuildRequires:	pkgconfig(pygobject-3.0)
 %endif
 
-Requires:  %{_lib}tepl6_0
+Requires:  %{_lib}tepl6_1
 
 Obsoletes:	%{_lib}gedit-private0 < 3.4.2
 Obsoletes:	%{name} < %{EVRD}
