@@ -110,7 +110,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 #{_libexecdir}/gedit/gedit-bugreport.sh
 %{_libdir}/gedit/girepository-1.0/Gedit-3.0.typelib
 %{_libdir}/gedit/libgedit*.so
-
+%{_libdir}/gedit/plugins/libtextsize.so
 %{_libdir}/gedit/plugins/libquickhighlight.so
 %{_libdir}/gedit/plugins/quickhighlight.plugin
 
