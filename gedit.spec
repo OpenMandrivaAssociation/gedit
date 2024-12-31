@@ -7,7 +7,7 @@
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
 Version:	48.1
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Editors
 Url:		https://gedit-technology.github.io/apps/gedit/
@@ -50,7 +50,7 @@ BuildRequires:	python-gi
 BuildRequires:	pkgconfig(pygobject-3.0)
 %endif
 
-Requires:  %{_lib}tepl6_2
+Requires:  %{_lib}tepl
 
 Obsoletes:	%{_lib}gedit-private0 < 3.4.2
 Obsoletes:	%{name} < %{EVRD}
@@ -75,7 +75,7 @@ Obsoletes:	%{_lib}gedit-private-devel < 3.4.2
 Install this if you want to build plugins that use gEdit's API.
 
 %prep
-%setup -qn %{name}-%{version}
+%autosetup -n %{name}-%{version} -p1
 
 %build
 %meson -Duser_documentation=true
