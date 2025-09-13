@@ -80,7 +80,7 @@ Install this if you want to build plugins that use gEdit's API.
 %prep
 %autosetup -n %{name}-%{version} -p1
 # Put newly downloaded submodule to correct dir.
-cd submodules
+cd subprojects
 rmdir libgd
 tar xf %{S:1}
 mv libgd-* libgd
