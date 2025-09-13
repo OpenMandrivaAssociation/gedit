@@ -13,6 +13,8 @@ Group:		Editors
 Url:		https://gedit-technology.github.io/apps/gedit/
 #Source0:	https://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.tar.xz
 Source0:  https://gitlab.gnome.org/World/gedit/gedit/-/archive/%{version}/gedit-%{version}.tar.bz2
+# Submodule needed when build from git archive and not a tarball.
+Source1:  https://gitlab.gnome.org/GNOME/libgd/-/archive/c7c7ff4e05d3fe82854219091cf116cce6b19de0.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:	desktop-file-utils
@@ -77,6 +79,12 @@ Install this if you want to build plugins that use gEdit's API.
 
 %prep
 %autosetup -n %{name}-%{version} -p1
+# Put newly downloaded submodule to correct dir.
+cd submodules
+rmdir libgd
+tar xf %{S:1}
+mv libgd-* libgd
+cd ..
 
 %build
 %meson -Duser_documentation=true
