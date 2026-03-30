@@ -6,7 +6,7 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	49.alpha1
+Version:	50.0
 Release:	1
 License:	GPLv2+
 Group:		Editors
@@ -39,7 +39,7 @@ BuildRequires:	pkgconfig(ice)
 BuildRequires:	pkgconfig(iso-codes)
 BuildRequires:	pkgconfig(libpeas-gtk-1.0)
 BuildRequires:	pkgconfig(libsoup-2.4)
-BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libxml-2.0) >= 2.15.0
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:  pkgconfig(vapigen)
@@ -53,7 +53,7 @@ BuildRequires:	python-gi
 BuildRequires:	pkgconfig(pygobject-3.0)
 %endif
 
-Requires:  %{_lib}tepl
+Requires:  typelib(Tepl)
 
 Obsoletes:	%{_lib}gedit-private0 < 3.4.2
 Obsoletes:	%{name} < %{EVRD}
