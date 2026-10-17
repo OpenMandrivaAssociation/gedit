@@ -6,15 +6,15 @@
 
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
-Version:	50.0
-Release:	2
+Version:	51.0
+Release:	1
 License:	GPLv2+
 Group:		Editors
 Url:		https://gedit-technology.github.io/apps/gedit/
 #Source0:	https://ftp.gnome.org/pub/GNOME/sources/gedit/%{url_ver}/%{name}-%{version}.tar.xz
 Source0:  https://gitlab.gnome.org/World/gedit/gedit/-/archive/%{version}/gedit-%{version}.tar.bz2
 # Submodule needed when build from git archive and not a tarball.
-Source1:  https://gitlab.gnome.org/GNOME/libgd/-/archive/libgd-c7c7ff4e05d3fe82854219091cf116cce6b19de0.tar.gz
+#Source1:  https://gitlab.gnome.org/GNOME/libgd/-/archive/libgd-c7c7ff4e05d3fe82854219091cf116cce6b19de0.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:	desktop-file-utils
@@ -80,11 +80,11 @@ Install this if you want to build plugins that use gEdit's API.
 %prep
 %autosetup -n %{name}-%{version} -p1
 # Put newly downloaded submodule to correct dir.
-cd subprojects
-rmdir libgd
-tar xf %{S:1}
-mv libgd-* libgd
-cd ..
+#cd subprojects
+#rmdir libgd
+#tar xf %{S:1}
+#mv libgd-* libgd
+#cd ..
 
 %build
 %meson -Duser_documentation=true
@@ -146,16 +146,7 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 
 %if %{build_python}
-#{python_sitelib}/gi/overrides/Gedit.py
-#{python_sitelib}/gi/overrides/__pycache__/Gedit.cpython-*.pyc
-
-#{_libdir}/gedit/plugins/pythonconsole/*
-#{_libdir}/gedit/plugins/pythonconsole.plugin
-
 %{_libdir}/gedit/plugins/textsize.plugin
-#{_libdir}/gedit/plugins/textsize/__init__.py
-#{_libdir}/gedit/plugins/textsize/signals.py
-#{_libdir}/gedit/plugins/textsize/viewactivatable.py
 %endif
 
 %files devel
