@@ -112,7 +112,8 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.filebrowser.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.time.gschema.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.time.enums.xml
-#{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.pythonconsole.gschema.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.drawspaces.gschema.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.gedit.plugins.wordcompletion.gschema.xml
 %{_mandir}/man1/gedit.1*
 %{_datadir}/icons/*/*/*/*
 
@@ -143,6 +144,15 @@ rm -Rf %{buildroot}%{py3_platsitedir}/gi/overrides/__pycache__
 
 %{_libdir}/gedit/plugins/codecomment.plugin
 %{_libdir}/gedit/plugins/libcodecomment.so
+
+%{_libdir}/gedit/plugins/bookmarks.plugin
+%{_libdir}/gedit/plugins/drawspaces.plugin
+%{_libdir}/gedit/plugins/libbookmarks.so
+%{_libdir}/gedit/plugins/libdrawspaces.so
+%{_libdir}/gedit/plugins/libsmartspaces.so
+%{_libdir}/gedit/plugins/libwordcompletion.so
+%{_libdir}/gedit/plugins/smartspaces.plugin
+%{_libdir}/gedit/plugins/wordcompletion.plugin
 
 
 %if %{build_python}
