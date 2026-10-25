@@ -7,7 +7,7 @@
 Summary:	Small but powerful text editor for GNOME
 Name:		gedit
 Version:	51.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Editors
 Url:		https://gedit-technology.github.io/apps/gedit/
@@ -57,6 +57,7 @@ Requires:  typelib(Tepl)
 
 Obsoletes:	%{_lib}gedit-private0 < 3.4.2
 Obsoletes:	%{name} < %{EVRD}
+Obsoletes:  gedit-plugins < %{EVRD}
 
 %description
 gEdit is a small but powerful text editor designed expressly
